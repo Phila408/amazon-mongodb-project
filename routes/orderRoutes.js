@@ -1,4 +1,3 @@
-// === routes/orderRoutes.js ===
 const express = require('express');
 const router = express.Router();
 const Order = require('../Models/orders.model');
@@ -14,7 +13,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Read all
+// view orders
 router.get('/', async (req, res) => {
   try {
     const orders = await Order.find()
@@ -26,7 +25,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Update
+// Update orders
 router.put('/:id', async (req, res) => {
   try {
     const updated = await Order.findByIdAndUpdate(req.params.id, req.body, { new: true });
