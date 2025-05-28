@@ -1,9 +1,8 @@
-// === routes/customerRoutes.js ===
 const express = require('express');
 const router = express.Router();
 const Customer = require('../Models/customer.model');
 
-// Create
+// Create customers
 router.post('/', async (req, res) => {
   try {
     const customer = new Customer(req.body);
@@ -14,7 +13,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Read all
+//view customers
 router.get('/', async (req, res) => {
   try {
     const customers = await Customer.find();
